@@ -1,16 +1,12 @@
 const mysql = require('mysql');
 const util = require('util');
-
-const DB_HOST = 'localhost';
-const DB_USER = 'root';
-const DB_PASS = '';
-const DB_NAME = 'howdy';
+require('dotenv').config();
 
 const connection = mysql.createConnection({
-  host: DB_HOST,
-  user: DB_USER,
-  password: DB_PASS,
-  database: DB_NAME,
+  host: process.env.RDS_HOSTNAME,
+  user: process.env.RDS_USERNAME,
+  password: process.env.RDS_PASSWORD,
+  database: process.env.RDS_DB_NAME,
 });
 
 connection.connect((err) => {
@@ -37,9 +33,8 @@ const addParty = (req, res) => {
   return query(mysqlQuery);
 }
 
-module.exports.getItems = getItems;
+// module.exports.getItems = getItems;
 module.exports = {
-  getItems,
   getRooms,
   addParty,
 };

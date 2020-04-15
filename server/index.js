@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
+require('dotenv').config();
 const { apiRouter } = require('./api');
 
 const app = express();
 
-const PORT = 8080;
+const PORT = process.env.RDS_PORT || 8080;
 const CLIENT_PATH = path.join(__dirname, '../client/dist');
 
 app.use(express.static(CLIENT_PATH));
