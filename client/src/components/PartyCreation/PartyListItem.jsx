@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import Moment from 'react-moment';
+import { useAlert } from 'react-alert';
 import distance from '../../Utils/LocationEquation.js';
 import { thirtyMinBeforeTodaysParty, formatTime, formatDate } from '../../Utils/time.js';
 
@@ -12,6 +13,7 @@ const PartyListItem = ({
   latitude,
 }) => {
   const [redirect, setRedirect] = useState(false);
+  const alert = useAlert();
 
   const joinParty = () => {
     setRedirect(true);
@@ -29,12 +31,12 @@ const PartyListItem = ({
       if (thirtyMinBeforeTodaysParty(date, start)) {
         joinParty();
       } else {
-        alert(`The party hasn't started yet. You can join 30 minutes before ${formatTime(start)} on ${formatDate(date)}`);
+        alert.show(`The party hasn't started yet. You can join 30 minutes before ${formatTime(start)} on ${formatDate(date)}`);
       }
     } else {
-      alert(`
-        You are ${Math.round(10 * distanceFromParty) / 10} mile(s) away from this party.
-        The host has invited people within ${party.radius} mile(s).`);
+      alert.show(`
+        You are ${Math.round(10 * distanceFromParty) / 10} miles away from this party.
+        The host has invited people within ${party.radius} miles.`);
     }
     getPartyInfo(party);
   };

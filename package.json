@@ -33,6 +33,8 @@
     "node-ipinfo": "^1.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.5",
+    "react-alert": "^7.0.1",
+    "react-alert-template-mui": "^1.0.4",
     "react-dom": "^16.8.5",
     "react-fade-in": "^0.1.8",
     "react-google-login": "^5.1.3",

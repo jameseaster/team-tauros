@@ -4,9 +4,20 @@ import {
 } from 'react-router-dom';
 import GoogleLogin from 'react-google-login';
 import Axios from 'axios';
+import AlertTemplate from 'react-alert-template-mui';
+import { Provider as AlertProvider } from 'react-alert';
+
 import Parties from './PartyCreation/Parties.jsx';
 import Login from './Login/Login.jsx';
 import Chatroom from './PartyRoom/ChatRoom.jsx';
+
+// Options for the alert provider
+const options = {
+  position: 'bottom center',
+  timeout: 5000,
+  offset: '30px',
+  transition: 'scale',
+};
 
 class App extends React.Component {
   constructor(props) {
@@ -112,14 +123,16 @@ class App extends React.Component {
     );
     if (view) {
       renderContainer = (
-        <HashRouter>
-          {this.renderRedirect()}
-          <Switch>
-            <Route exact path="/" render={() => (<Login getUserInfo={this.getUserInfo} getLocationFromLogin={this.getLocationFromLogin} />)} />
-            <Route exact path="/parties" render={() => (<Parties longitude={longitude} latitude={latitude} city={city} region={region} getPartyInfo={this.getPartyInfo} imageUrl={userInfo.image_url} />)} />
-            <Route exact path="/chatroom" render={() => (<Chatroom partyInfo={partyInfo} username={userInfo.name} />)} />
-          </Switch>
-        </HashRouter>
+        <AlertProvider template={AlertTemplate} {...options}>
+          <HashRouter>
+            {this.renderRedirect()}
+            <Switch>
+              <Route exact path="/" render={() => (<Login getUserInfo={this.getUserInfo} getLocationFromLogin={this.getLocationFromLogin} />)} />
+              <Route exact path="/parties" render={() => (<Parties longitude={longitude} latitude={latitude} city={city} region={region} getPartyInfo={this.getPartyInfo} imageUrl={userInfo.image_url} />)} />
+              <Route exact path="/chatroom" render={() => (<Chatroom partyInfo={partyInfo} username={userInfo.name} />)} />
+            </Switch>
+          </HashRouter>
+        </AlertProvider>
       );
     }
     return (
