@@ -48,7 +48,7 @@ body {
   flex: auto;
   max-height: 55px;
   max-width: 50px;
-  margin-left: 4%;
+  margin-left: 1%;
 }
 
 .tagline{
@@ -57,6 +57,7 @@ body {
   flex: right;
   padding-right: 10px;
   padding-top: 18px;
+  margin-right: 10px;
 }
 
                                   /* Login Page/Google Features */
@@ -132,7 +133,7 @@ body {
 .logoutGoogle {
   float: right;
   margin-bottom: 5px;
-  margin-right: 15vw;
+  margin-right: 37.5vw;
   margin-left: 1px;
 }
 .logout-bar {
@@ -180,6 +181,7 @@ body {
   border-width: 4px;
   border-radius: 10px;
   min-height: 43vmax;
+  min-height: 88vh;
   max-height: 43vmax;
   overflow: auto;
 }
@@ -190,6 +192,7 @@ body {
 
 .creation-group {
   margin-top: -15px;
+  margin-bottom: 15px;
 }
 
 .form-control {
@@ -210,7 +213,8 @@ label {
   border-color: #EAEAEA;
   border-width: 4px;
   border-radius: 10px;
-  min-height: 43vmax;
+  /* min-height: 43vmax; */
+  min-height: 87vh;
   max-height: 43vmax;
   display: flex;
   flex-direction: column;
@@ -285,7 +289,9 @@ label {
   border-color: #EAEAEA;
   border-width: 4px;
   border-radius: 10px;
-  min-height: 40vmax;
+  /* min-height: 40vmax; */
+  min-height: 80vh;
+  width: 23vw;
   max-height: 40vmax;
   overflow: auto;
   background-color: #FFCF99;
