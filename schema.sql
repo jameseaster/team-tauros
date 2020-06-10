@@ -65,5 +65,5 @@ INSERT INTO rooms (name, host_id, host_lat, host_long, city, region, radius, det
 
 INSERT INTO rooms (name, host_id, host_lat, host_long, radius, details, city, region, date, start, end) VALUES ('New Year\'s Eve in NYC', 3, 40.7306, -73.9352, 1350, 'Toast with your favorite drink', 'New York City', 'New York', '2020-12-31', '16:00:00', '12:00:00');
 INSERT INTO rooms (name, host_id, host_lat, host_long, radius, details, city, region, date, start, end) VALUES ('Surf Stories', 4, 20.7984, -156.3319, 1, 'Successes & Wipeouts of June', 'Maui', 'Hawaii', '2020-06-30', '12:00:00', '14:00:00');
-INSERT INTO rooms (name, host_id, host_lat, host_long, radius, details, city, region, date, start, end) VALUES ('Jazz Fest at Home', 4, 29.9511, -90.0715, 30, 'Share favorite JazzFest memories', 'New Orleans', 'Louisiana', '2020-06-10', '10:00:00', '14:00:00');
+INSERT INTO rooms (name, host_id, host_lat, host_long, radius, details, city, region, date, start, end) VALUES ('Jazz Fest at Home', 4, 29.9511, -90.0715, 30, 'Share favorite JazzFest memories', 'New Orleans', 'Louisiana', '2020-06-10', '17:30:00', '19:30:00');
 INSERT INTO rooms (name, host_id, host_lat, host_long, radius, details, city, region, date, start, end) VALUES ('Couch Coffee Crawl', 4, 45.5051, -122.6750, 30, 'What coffee are you brewing?', 'Portland', 'Oregon', '2020-06-15', '07:00:00', '09:00:00');
